@@ -11,6 +11,7 @@ class Login extends Component {
             password: ''
         }
         this.controlChange = this.controlChange.bind(this);
+        this.controlSubmit = this.controlSubmit.bind(this);
     }
 
     controlChange = e => {
@@ -18,6 +19,16 @@ class Login extends Component {
         this.setState({
             [param]: e.target.value 
         })
+    }
+
+    controlSubmit = e =>  {
+        e.preventDefault();
+        const payload = { 
+            username: this.state.username,
+            password: this.state.password
+        };
+        
+
     }
 
     
@@ -30,10 +41,10 @@ class Login extends Component {
             <div>
                 <h1>Login</h1>
 
-                <form>
+                <form onSubmit={this.controlSubmit}>
                     <label>
                         Username:
-                        <input param="username" type="text" placeholder="Username" required />
+                        <input param="username" type="text" placeholder="Username" required onChange= {this.controlChange}/>
                     </label>
                     <label>
                         Password:
