@@ -1,5 +1,6 @@
 import { withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 
@@ -10,32 +11,35 @@ class Login extends Component {
             username: '',
             password: ''
         }
+        this.backToHome = this.backToHome.bind(this);
         this.controlChange = this.controlChange.bind(this);
         this.controlSubmit = this.controlSubmit.bind(this);
+    };
+
+    backToHome = () => {
+        this.props.history.push('/home');  // Redirect login page to home 
     }
 
     controlChange = e => {
         const param = e.target.param;
         this.setState({
-            [param]: e.target.value 
+            [param]: e.target.value
         })
     }
 
-    controlSubmit = e =>  {
+    controlSubmit = e => {
         e.preventDefault();
-        const payload = { 
+        const payload = {
             username: this.state.username,
             password: this.state.password
         };
-        
-
-    }
-
-    
-
-
-
+        axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/loginhttp://localhost:8000/auth/login', payload, {
+            headers: {
+                'x-api-key': `2kQs4oNvqe91cr9AdfHis28uFrUeobspaUtLslE0`
+            }})
    
+
+     }
     render() {
         return (
             <div>
@@ -44,11 +48,11 @@ class Login extends Component {
                 <form onSubmit={this.controlSubmit}>
                     <label>
                         Username:
-                        <input param="username" type="text" placeholder="Username" required onChange= {this.controlChange}/>
+                        <input param="username" type="text" placeholder="Username" required onChange={this.controlChange} />
                     </label>
                     <label>
                         Password:
-                        <input param="password" type="text" placeholder="Password" required onChange = {this.controlChange} />
+                        <input param="password" type="text" placeholder="Password" required onChange={this.controlChange} />
                     </label>
                     <label>
                         Remember me:
