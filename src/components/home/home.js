@@ -12,7 +12,7 @@ const options = {
     type: "spline",
   },
   title: {
-    text: "Spending (Past 1 week)",
+    text: "Spending (Past 5 days)",
   },
   xAxis: {
     categories: [],
@@ -23,11 +23,11 @@ const options = {
   series: [
     {
       name: "Spending",
-      data: [1, 0, 5, 6, 0, 2, 3],
+      data: [100, 400, 500, 600, 400 ],
     },
     {
       name: "Buying",
-      data: [1, 0, 1, 0, 0, 3, 1],
+      data: [700, 200, 100, 500, 300],
     },
   ],
 };
@@ -80,17 +80,14 @@ class HomePage extends React.Component{
         const payload = {
         accountKey: "ca9b610a-3752-435b-be40-3311b200fab1",
         };
-                const payload2 = {
-                  username: "Group19",
-                  password: "iOrKzSMrhUwgaZ2",
-                };
+                
         let config = {
         headers: {
             "x-api-key": "2kQs4oNvqe91cr9AdfHis28uFrUeobspaUtLslE0",
         },
         };  
+
       await axios.post("https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/balance",payload,config).then((response)=>{
-          console.log(response.data);
           const value=[]
           value.push({name:"Asset",y:response.data.assetBalance,z:100})
         value.push({
@@ -100,8 +97,19 @@ class HomePage extends React.Component{
                     });
           options2.series[0].data=value;
       })
-          this.setState({ loading: false });
 
+        await axios
+            .post(
+            "https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/transactions/view",
+            payload,config
+            )
+            .then((response) => {
+            const data =  response.data;
+            console.log(data);
+            
+            console.log(options.series)
+            });
+          this.setState({ loading: false });
   }
 
     render(){

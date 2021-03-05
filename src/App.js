@@ -6,6 +6,7 @@ import Nav from './components/nav/nav';
 import Login from './components/login/login';
 import BuyorSell from './components/buyorsell/buyorsell';
 import HomePage from './components/home/home';
+import Transcationlist from './components/transaction/transcation';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Route>
         <Route path="/buyorsell" component={BuyorSell}></Route>
         <Route path="/home" component={HomePage}></Route>
+        <Route path="/transcation" component={Transcationlist}></Route>
       </Router>
     </div>
   );
