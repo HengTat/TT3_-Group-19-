@@ -5,6 +5,7 @@ import Balance from './components/balance/balance';
 import Nav from './components/nav/nav';
 import Login from './components/login/login';
 import BuyorSell from './components/buyorsell/buyorsell';
+import HomePage from './components/home/home';
 
 function App() {
   return (
@@ -12,10 +13,11 @@ function App() {
       <Router>
         <Nav></Nav>
         <Route path="/balance" component={Balance}></Route>
-        <Route exact={true} path='/'>
-            <Login />
-          </Route>
+        <Route exact={true} path="/">
+          <Login />
+        </Route>
         <Route path="/buyorsell" component={BuyorSell}></Route>
+        <Route path="/home" component={HomePage}></Route>
       </Router>
     </div>
   );
