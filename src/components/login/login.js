@@ -59,11 +59,15 @@ class Login extends Component {
                         <input type="checkbox"></input>
                     </label>
                     <button type="submit">Login</button>
+
+                    
+
+
                 </form>
             </div>
         )
 
-        
+
 
     }
 }
