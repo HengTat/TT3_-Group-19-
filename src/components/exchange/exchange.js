@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios'; 
+import { MDBBtn, MDBCard } from 'mdbreact';
 
 class Exchange extends Component {
     constructor(props) {
@@ -42,17 +43,18 @@ getCurrentPrice = () => {
 
 render() {
     return (
-        <div>
-            <h1> Price </h1>
-            <br />
-                <button onClick={this.getCurrentPrice}>Show Current Price</button>
-                <h1>Price: {this.state.Exchange.price}</h1>
-                <h1>Symbol: {this.state.Exchange.assetSymbol}</h1>
-                <h1>Timestamp: {this.state.Exchange.timestamp}</h1>
-                <br />
-               
-        </div>
-    )
+      <div>
+        <MDBCard>
+          <h1> Price </h1>
+          <br />
+          <MDBBtn onClick={this.getCurrentPrice}>Show Current Price</MDBBtn>
+          <h1>Price: {this.state.Exchange.price}</h1>
+          <h1>Symbol: {this.state.Exchange.assetSymbol}</h1>
+          <h1>Timestamp: {this.state.Exchange.timestamp}</h1>
+          <br />
+        </MDBCard>
+      </div>
+    );
 }
 }
 export default withRouter(Exchange)
