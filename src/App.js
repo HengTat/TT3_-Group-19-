@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import Balance from "./components/balance/balance";
 import Nav from "./components/nav/nav";
-import Transaction from "./components/transaction/transcation";
+import Transaction from "./components/transaction/transaction";
 
 function App() {
   return (
