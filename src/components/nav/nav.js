@@ -34,7 +34,7 @@ function Nav(){
                     fontSize: "15px",
                   }}
                 >
-                  Exhange
+                  Exchange
                 </p>
               </div>
             </strong>
