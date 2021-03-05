@@ -21,9 +21,9 @@ class Login extends Component {
     }
 
     controlChange = e => {
-        const param = e.target.param;
+        const name = e.target.name
         this.setState({
-            [param]: e.target.value
+            [name]: e.target.value
         })
     }
 
@@ -33,7 +33,7 @@ class Login extends Component {
             username: this.state.username,
             password: this.state.password
         };
-        axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/loginhttp://localhost:8000/auth/login', payload, {
+        axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/login', payload, {
             headers: {
                 'x-api-key': `2kQs4oNvqe91cr9AdfHis28uFrUeobspaUtLslE0`
             }})
@@ -48,11 +48,11 @@ class Login extends Component {
                 <form onSubmit={this.controlSubmit}>
                     <label>
                         Username:
-                        <input param="username" type="text" placeholder="Username" required onChange={this.controlChange} />
+                        <input name="username" type="text" placeholder="Username" required onChange={this.controlChange} />
                     </label>
                     <label>
                         Password:
-                        <input param="password" type="text" placeholder="Password" required onChange={this.controlChange} />
+                        <input name="password" type="text" placeholder="Password" required onChange={this.controlChange} />
                     </label>
                     <label>
                         Remember me:
