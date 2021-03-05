@@ -14,6 +14,27 @@ function Transaction() {
   //const [isLoading, setisLoading] = useState(true);
   const [update, setUpdate] = useState([]);
 
+  function viewPast() {
+    axios
+      .post(
+        "https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/transactions/view",
+        payload,
+        config
+      )
+      .then((response) => {
+        console.log(response);
+      });
+  }
+
+  useEffect(() => {
+    viewPast();
+  }, []);
+
+  //isLoading is always
+  /*if (isLoading) {
+    return <div>Loading...</div>;
+  }*/
+
   /*const data = {
     columns: [
       {
@@ -61,27 +82,6 @@ function Transaction() {
     ],
     rows: update,
   };*/
-
-  function viewPast() {
-    axios
-      .post(
-        "https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/transactions/view",
-        payload,
-        config
-      )
-      .then((data) => {
-        console.log(data);
-      });
-  }
-
-  useEffect(() => {
-    viewPast();
-  }, []);
-
-  //isLoading is always active.. removed for now
-  /*if (isLoading) {
-    return <div>Loading...</div>;
-  }*/
 
   return (
     <div className="history">
