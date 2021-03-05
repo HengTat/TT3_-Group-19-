@@ -1,6 +1,7 @@
 import { withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
 import axios from 'axios';
+import { MDBCard } from 'mdbreact';
 
 
 
@@ -42,30 +43,50 @@ class Login extends Component {
      }
     render() {
         return (
-            <div>
-                <h1>Login</h1>
+          <div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
 
-                <form onSubmit={this.controlSubmit}>
-                    <label>
-                        Username:
-                        <input name="username" type="text" placeholder="Username" required onChange={this.controlChange} />
-                    </label>
-                    <label>
-                        Password:
-                        <input name="password" type="text" placeholder="Password" required onChange={this.controlChange} />
-                    </label>
-                    <label>
-                        Remember me:
-                        <input type="checkbox"></input>
-                    </label>
-                    <button type="submit">Login</button>
+            <MDBCard style={{ textAlign: "center" }}>
+              <h1>Login</h1>
 
-                    
-
-
-                </form>
-            </div>
-        )
+              <form onSubmit={this.controlSubmit}>
+                <label>
+                  Username:
+                  <input
+                    name="username"
+                    type="text"
+                    placeholder="Username"
+                    required
+                    onChange={this.controlChange}
+                  />
+                </label>
+                <br />
+                <label>
+                  Password:
+                  <input
+                    name="password"
+                    type="text"
+                    placeholder="Password"
+                    required
+                    onChange={this.controlChange}
+                  />
+                </label>
+                <br />
+                <label>
+                  Remember me:
+                  <input type="checkbox"></input>
+                </label>
+                <br />
+                <button type="submit">Login</button>
+              </form>
+            </MDBCard>
+          </div>
+        );
 
 
 

@@ -7,12 +7,8 @@ import Exchange from './components/exchange/exchange';
 import Nav from './components/nav/nav';
 import Login from './components/login/login';
 import BuyorSell from './components/buyorsell/buyorsell';
-<<<<<<< HEAD
 import HomePage from './components/home/home';
 import Transcationlist from './components/transaction/transcation';
-=======
-import Login from './components/login/login';
->>>>>>> zhafbranch
 
 function App() {
   return (

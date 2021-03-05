@@ -19,11 +19,12 @@ function Nav(){
                 &nbsp; &nbsp;
                 <h4>
                   <MDBIcon
-                    icon="running"
+                    icon="chart-bar"
                     style={{
                       color: "white",
                       verticalAlign: "middle",
                       paddingRight: "10px",
+                      paddingTop:"10px"
                     }}
                   />
                 </h4>
@@ -58,18 +59,10 @@ function Nav(){
                 <MDBNavLink to="/profile">Profile</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/transcation">Profile</MDBNavLink>
+                <MDBNavLink to="/transcation">Transaction</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>
-              <MDBNavItem>
-                <MDBNavLink to="">Welcome !</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/editaccount">
-                  <MDBIcon icon="cog" /> &nbsp; Edit Account
-                </MDBNavLink>
-              </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="/login">
                   <MDBIcon icon="sign-in-alt" /> &nbsp; Logout
