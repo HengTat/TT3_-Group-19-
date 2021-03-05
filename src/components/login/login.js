@@ -1,9 +1,30 @@
-import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 
 
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: ''
+        }
+        this.controlChange = this.controlChange.bind(this);
+    }
+
+    controlChange = e => {
+        const param = e.target.param;
+        this.setState({
+            [param]: e.target.value 
+        })
+    }
+
+    
+
+
+
+   
     render() {
         return (
             <div>
@@ -12,11 +33,11 @@ class Login extends Component {
                 <form>
                     <label>
                         Username:
-                        <input name="username" type="text" placeholder="Username" required />
+                        <input param="username" type="text" placeholder="Username" required />
                     </label>
                     <label>
                         Password:
-                        <input name="password" type="text" placeholder="Password" required />
+                        <input param="password" type="text" placeholder="Password" required onChange = {this.controlChange} />
                     </label>
                     <label>
                         Remember me:
