@@ -15,8 +15,12 @@ class Exchange extends Component {
 };
 
 getCurrentPrice = () => {
+    const payload = {
+        AcctKey: 'ca9b610a-3752-435b-be40-3311b200fab1'
+
+    };
     
-    axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/pricing/current', {
+    axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/pricing/current', payload, {
         headers: {
             'x-api-key': '2kQs4oNvqe91cr9AdfHis28uFrUeobspaUtLslE0'
         }
@@ -42,6 +46,9 @@ render() {
             <h1> Price </h1>
             <br />
                 <button onClick={this.getCurrentPrice}>Show Current Price</button>
+                <h1>Price: {this.state.Exchange.price}</h1>
+                <h1>Symbol: {this.state.Exchange.assetSymbol}</h1>
+                <h1>Timestamp: {this.state.Exchange.timestamp}</h1>
                 <br />
                
         </div>
