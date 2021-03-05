@@ -5,8 +5,10 @@ import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import Balance from './components/balance/balance';
 import Exchange from './components/exchange/exchange';
 import Nav from './components/nav/nav';
-import BuyorSell from './components/buyorsell/buyorsell';
 import Login from './components/login/login';
+import BuyorSell from './components/buyorsell/buyorsell';
+import HomePage from './components/home/home';
+import Transcationlist from './components/transaction/transcation';
 
 function App() {
   return (
@@ -19,13 +21,13 @@ function App() {
         <Route path="/Exchange">
           <Exchange />
         </Route>
-
         <Route path="/balance" component={Balance}></Route>
-        <Route exact={true} path='/'>
-            <Login />
-          </Route>
+        <Route exact={true} path="/">
+          <Login />
+        </Route>
         <Route path="/buyorsell" component={BuyorSell}></Route>
-
+        <Route path="/home" component={HomePage}></Route>
+        <Route path="/transcation" component={Transcationlist}></Route>
       </Router>
 
     </div>

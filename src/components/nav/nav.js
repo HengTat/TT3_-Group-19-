@@ -57,6 +57,9 @@ function Nav(){
               <MDBNavItem>
                 <MDBNavLink to="/profile">Profile</MDBNavLink>
               </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink to="/transcation">Profile</MDBNavLink>
+              </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>
               <MDBNavItem>
