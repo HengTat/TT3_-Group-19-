@@ -6,6 +6,7 @@ import Balance from './components/balance/balance';
 import Exchange from './components/exchange/exchange';
 import Nav from './components/nav/nav';
 import BuyorSell from './components/buyorsell/buyorsell';
+import Login from './components/login/login';
 
 function App() {
   return (
