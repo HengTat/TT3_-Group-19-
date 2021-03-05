@@ -11,22 +11,19 @@ function App() {
     <div className="App">
       <Router>
         <Nav></Nav>
-<<<<<<< HEAD
+
         <Route path="/Balance" component={Balance}></Route>
       
         <Route path="/Exchange">
           <Exchange />
         </Route>
-=======
+
         <Route path="/balance" component={Balance}></Route>
-<<<<<<< HEAD
         <Route exact={true} path='/'>
             <Login />
           </Route>
-=======
         <Route path="/buyorsell" component={BuyorSell}></Route>
->>>>>>> buyorsell
->>>>>>> master
+
       </Router>
 
     </div>
